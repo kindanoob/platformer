@@ -1,4 +1,4 @@
-# game_of_life
+# platformer
 Basic platformer game engine implemented in C++ using SFML
 
 Requirements: 
