@@ -61,8 +61,9 @@ void update_offset_y(const Entity &entity) {
 void check_intersection_with_enemy(Player &player, Enemy &enemy) {
     if (player.get_rect().intersects(enemy.get_rect())) {
         if (enemy.is_alive && player.is_alive && (abs(player.invul_duration) == 0)) {
-            if ((player.dy > 0) && (player.get_y() + player.get_h() * 3 / 4 < enemy.get_y())) {//if player is falling on the ground and
-                //he is above the enemy
+            //if player is falling on the ground and he is above the enemy
+            if ((player.dy > 0) && (player.get_y() + player.get_h() * 3 / 4 < enemy.get_y())) {
+                
                 enemy.dx = 0;
                 player.dy = -0.2;
                 enemy.is_alive = false;
@@ -296,7 +297,7 @@ int main() {
         window.draw(game_timer_text);
         
 
-        ///DRAWING_BLOCK///
+        ///DRAWING_BLOCK
         if (player.dead_duration < 2000) {
             player.draw(window, offset_x, offset_y);
         } else {
