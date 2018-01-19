@@ -16,7 +16,7 @@ Instructions:
 6) Mouse controls. Use mouse to navigate the main menu. Click on the menu buttons with left mouse click.
 7) Keyboard controls. Use Left/Right arrow keys to move your character left/right. 
     Use Up arrow button to jump. Use Z button to shoot (only with weapon equipped).
-8) Currently there is only one sandbox level without any goal. Collect apples (green squares), avoid obstacles (red squares), kill enemies, pick-up weapons (yellow squares).
+8) Currently there is only one sandbox level without any goal. Collect apples (green squares), avoid obstacles (red squares), kill enemies (by jumping over them or by shooting them), pick-up weapons (yellow squares).
 
 
 The project is very early in the development stage and there are a lot of things to be implemented.
