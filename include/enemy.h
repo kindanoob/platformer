@@ -65,10 +65,7 @@ void Enemy::update(double time, GameMap &game_map, double offset_x, double offse
             return;
         }
         set_x(get_x() + dx * time);
-        //std::cout << "update, time: " << time << ", dx: " << dx <<
-        //", dx * time: " << dx * time << std::endl;
         check_map_collisions(game_map, HORIZONTAL);
-        //current_frame += 0.005 * time;
         if (dx > 0) {
             animation_manager.set_animation("enemy_walk_right");
         } else {

@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 
-//B - brick, 0 - bonus, P - pistol, D - fire
+//B - brick, 0 - bonus, P - pistol, D - fire_obstacle
 const int TILE_SIDE_LENGTH = 32;
 
 const std::vector<std::vector<std::string> > MAPS_VECTOR = {
