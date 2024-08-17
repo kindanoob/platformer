@@ -1,6 +1,7 @@
 #ifndef PLAYER_H_
 #define PLAYER_H_
 
+#include <cmath>
 #include "entity.h"
 
 const int INVUL_DURATION = 2000;//in milliseconds, time during which character is invulnerable after contact with enemy (if character survived the contact)
@@ -183,8 +184,8 @@ void Player::check_map_collisions (GameMap &game_map, DIRECTION dir) {
                     }
                     set_dy(-0.2);
                     set_dx(0.1);
-                    if (fabs(get_dx_prev()) > 0.0001) {
-                        set_dx(get_dx() * (-get_dx_prev() / fabs(get_dx_prev())));
+                    if (std::fabs(get_dx_prev()) > 0.0001) {
+                        set_dx(get_dx() * (-get_dx_prev() / std::fabs(get_dx_prev())));
                     } else {
                         //
                     }
@@ -324,7 +325,7 @@ void  Player::update(double time, GameMap &game_map, double offset_x, double off
     //if (rect.top > GROUND) { rect.top = GROUND; dy = 0; on_ground = true;}
     //current_frame += 0.005 * time;
     //if (current_frame > 4) current_frame -= 4 ;
-    if ((fabs(dy) > EPSILON) && (fabs(dy) < 0.3) && !on_platform) {//if character is in air and sufficiently above the ground level
+    if ((std::fabs(dy) > EPSILON) && (std::fabs(dy) < 0.3) && !on_platform) {//if character is in air and sufficiently above the ground level
         if (dx_prev > 0) {//if last movement in along x axis was in the right direction
             //sprite.setTextureRect(sf::IntRect(w * 0, h * 0, w, h));
             //animation_manager.set_animation("player_in_air_right");
@@ -334,7 +335,7 @@ void  Player::update(double time, GameMap &game_map, double offset_x, double off
             //animation_manager.set_animation("player_in_air_left");
             state = IN_AIR_LEFT;
         }
-    } else if (fabs(dx) < 0.0001) {//if character is on the ground (or near ground) and is not moving along x axis
+    } else if (std::fabs(dx) < 0.0001) {//if character is on the ground (or near ground) and is not moving along x axis
         if (dx_prev > 0) {
             //sprite.setTextureRect(sf::IntRect(1 * w, 0 * h, w, h));
             //animation_manager.set_animation("player_stay_right");
@@ -359,7 +360,7 @@ void  Player::update(double time, GameMap &game_map, double offset_x, double off
 
     //if character is moving along x axis, update dx_prev,
     //update it only if left or right key was pressed
-    if ((fabs(dx) > 0.0001) && left_right_pressed) {        
+    if ((std::fabs(dx) > 0.0001) && left_right_pressed) {        
         set_dx_prev(get_dx());
     }
     set_dx(0);
